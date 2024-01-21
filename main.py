@@ -1,9 +1,9 @@
 import requests, telebot
 from telebot import types
-bot = telebot.TeleBot("6376984815:AAG_wnUt-DZH2dADByCLfBLQkPOjFaEt0ss")
+bot = telebot.TeleBot("6547250716:AAFG6fiOSe4rJtdoMe-SWR4dh5jeXCJ4h6s")
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    data={'key':'b1ff0353bf18597cbf4ab21951b7f4db','action':'balance'}
+    data={'key':'c72a429e861400b34e3535051959435e','action':'balance'}
     res=requests.post('https://smmpanel.com/api/v2',data=data).json()
     balance=float(res['balance'])
     views=str(balance/0.0000001).split('.')[0]
@@ -19,10 +19,10 @@ def handle_start(message):
 
 - Send Video URL Here''',reply_markup=markup)
 def gpt(text) -> str:
- data={'key':'b1ff0353bf18597cbf4ab21951b7f4db','action':'add','service':768,'link':text,'quantity':1000}
+ data={'key':'c72a429e861400b34e3535051959435e','action':'add','service':768,'link':text,'quantity':1000}
  res=requests.post('https://smmpanel.com/api/v2',data=data)
  if 'order"' in res.text:
-   s='[√] Done Send 10000 Views'
+   s='[√] Done Send 1000 Views'
    return s
  else:
   msg=res.json()['error']
