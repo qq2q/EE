@@ -3,7 +3,7 @@ from telebot import types
 bot = telebot.TeleBot("6547250716:AAFG6fiOSe4rJtdoMe-SWR4dh5jeXCJ4h6s")
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    data={'key':'c72a429e861400b34e3535051959435e','action':'balance'}
+    data={'key':'6d37c130d54669c53bf9bd1e90ed2833','action':'balance'}
     res=requests.post('https://smmpanel.com/api/v2',data=data).json()
     balance=float(res['balance'])
     views=str(balance/0.0000001).split('.')[0]
@@ -19,7 +19,7 @@ def handle_start(message):
 
 - Send Video URL Here''',reply_markup=markup)
 def gpt(text) -> str:
- data={'key':'c72a429e861400b34e3535051959435e','action':'add','service':768,'link':text,'quantity':1000}
+ data={'key':'6d37c130d54669c53bf9bd1e90ed2833','action':'add','service':768,'link':text,'quantity':1000}
  res=requests.post('https://smmpanel.com/api/v2',data=data)
  if 'order"' in res.text:
    s='[√] Done Send 1000 Views'
